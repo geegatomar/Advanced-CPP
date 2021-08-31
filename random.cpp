@@ -1,19 +1,22 @@
 #include <iostream>
 
-void printInt(int x)
+void print(char c, int x)
 {
-    std::cout << x << std::endl;
+    std::cout << 'a';
 }
 
+void print(char c, double x)
+{
+    std::cout << 'b';
+}
+
+void print(char c, float x)
+{
+    std::cout << 'c';
+}
+
+// By default a decimal number is treated as double, but you can static cast it to float.
 int main()
 {
-    printInt(2);
-
-    short s{3};  // there is no short literal suffix, so we'll use a variable for this one
-    printInt(s); // numeric promotion of short to int
-
-    printInt('a');  // numeric promotion of char to int
-    printInt(true); // numeric promotion of bool to int
-
-    return 0;
+    print('x', static_cast<float>(3.500001));
 }
