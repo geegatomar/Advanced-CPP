@@ -17,7 +17,19 @@ public:
     }
 };
 
+class Student
+{
+public:
+    int id{2}, roll{3};
+
+    Student() : id{4}
+    {
+    }
+};
+
 int main()
 {
     Employee emp1{3};
+    Student s;
+    cout << s.id << " " << s.roll << endl;
 }
